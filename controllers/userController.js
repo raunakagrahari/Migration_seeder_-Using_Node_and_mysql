@@ -32,7 +32,11 @@ function singUp(req,res){
                 })
             })
         }
-    }).catch();
+    }).catch(error => {
+        res.status(500).json({
+            message: "Something went wrong!",
+        });
+    });
 }
 
 function login(req, res){
